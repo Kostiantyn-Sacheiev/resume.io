@@ -1,0 +1,176 @@
+body {
+    margin: 0;
+    font-family: 'Radley', serif;
+    background-color: #f4f1e8;
+    color: #9b4819;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    scroll-snap-align: start;
+}
+
+h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+p, ul, li, a {
+    font-size: 18px;
+    text-align: left;
+}
+
+html {
+    scroll-snap-type: y mandatory; /*proximity*/
+}
+
+.menu {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f4f1e8;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.menu a {
+    color: #9b4819;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.about {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    text-align: left;
+}
+
+.about img {
+    width: 200px;
+    border-radius: 20px;
+}
+
+.education {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.block {
+    text-align: center;
+}
+
+.block img {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.block hr {
+    border: 1px solid #bd8f53;
+}
+
+section#page2 h1 {
+  margin-bottom: 120px;
+}
+
+section#page2 p {
+  text-align: center;
+}
+
+.experience {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    padding: 20px 0;
+}
+
+.experience::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    background-color: #bd8f53;
+    left: 110px;
+    top: 0;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.item img {
+    width: 100px;
+}
+
+.text-block li {
+  text-align: left;
+}
+
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.card {
+    width: 200px;
+    height: 300px;
+    perspective: 1000px;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.card-front {
+    background: #bd8f53;
+    color: #f4f1e8;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.card-back {
+    background: #f4f1e8;
+    color: #9b4819;
+    transform: rotateY(180deg);
+    text-align: center;
+    font-size: 1em;
+    padding: 10px;
+    box-sizing: border-box;
+}
